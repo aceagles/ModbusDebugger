@@ -3,27 +3,17 @@ const props = defineProps(['data']);
 </script>
 
 <template>
-    <div class="border m-2 p-2 bg-light">
-    <table class="table">
-      <thead>
-        <tr>
-            <th scope="col">
-                Register
-            </th>
-          <th scope="col" v-for="(column, columnIndex) in data.RegData" :key="columnIndex">
-            {{ columnIndex + data.startReg }}
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-
-        <tr>
-            <th scope="row">Value</th>
-          <td v-for="(column, columnIndex) in data.RegData" :key="columnIndex">
-            {{ column }}
-          </td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="border m-2 p-2 bg-light container">
+    <div class="d-flex">
+      <div class="d-inline px-2 ">Register: <br> Value: </div>
+      <div class="d-flex flex-row flex-wrap">
+      
+        <div class="border px-2 text-center bold" v-for="(column, columnIndex) in data.RegData" :key="columnIndex">
+          <b>{{ columnIndex + data.startReg }}</b>
+          <br>
+          {{ column }}
+        </div>
+      </div>
+    </div>
     </div>
 </template>
