@@ -10,7 +10,11 @@ function addGroup () {
 }
 
 onMounted(() => {
-    GetGroups().then(result => data.value = result)
+    GetGroups().then(result => {
+        if (result != null) {
+            data.value = result 
+        }
+    })
 })
 
 </script>
