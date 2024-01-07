@@ -13,7 +13,7 @@ onMounted(() => {
 
 <template>
     <div>
-        <div v-for="val in data.vals" :key="val">
+        <div v-for="(val, index) in data.vals" :key="index">
             <reg-data-card :data="val" />
         </div>
     </div>
